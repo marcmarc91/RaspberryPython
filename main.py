@@ -6,5 +6,6 @@ led = LED(17)
 while True:
     led.on()
     sleep(1)
+    print("test")
     led.off()
     sleep(1)
