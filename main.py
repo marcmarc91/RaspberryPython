@@ -1,12 +1,10 @@
-from gpiozero import LightSensor
-
+from gpiozero import LED
 from time import sleep
 
-from gpiozero.pins.pigpio import PiGPIOFactory
-
-factory = PiGPIOFactory(host='192.168.0.297')
-ldr = LightSensor(18,pin_factory=factory)
+led = LED(17)
 
 while True:
-    ldr.wait_for_light()
-    print("Light detected!")
+    led.on()
+    sleep(1)
+    led.off()
+    sleep(1)
