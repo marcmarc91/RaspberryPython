@@ -7,15 +7,18 @@ in1 = 24
 in2 = 23
 en = 25
 temp1 = 1
+btn=16;
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(in1, GPIO.OUT)
 GPIO.setup(in2, GPIO.OUT)
 GPIO.setup(en, GPIO.OUT)
+GPIO.setup(btn,GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.output(in1, GPIO.LOW)
 GPIO.output(in2, GPIO.LOW)
 p = GPIO.PWM(en, 2000)
 p.start(25)
+pressed=False
 print("\n")
 print("The default speed & direction of motor is LOW & Forward.....")
 print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
@@ -24,6 +27,15 @@ print("\n")
 while (1):
 
     x = raw_input()
+
+    if not GPIO.input(btn):
+        if not pressed:
+            print("Button pressed!")
+            pressed = True
+        # button not pressed (or released)
+    else:
+        pressed = False
+    time.sleep(0.1)
 
     if x == 'r':
         print("run")
