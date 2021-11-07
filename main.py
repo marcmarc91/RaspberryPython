@@ -1,3 +1,5 @@
+import time
+
 import RPi.GPIO as GPIO
 from time import sleep
 
@@ -79,6 +81,7 @@ while (1):
             if i % 10 == 0:
                 print(i)
                 p.ChangeDutyCycle(i)
+                time.sleep(2)
         x = 'p'
 
     elif x == 'e':
