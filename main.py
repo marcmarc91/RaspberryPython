@@ -77,7 +77,7 @@ while (1):
 
     elif x == 'p':
         print("progressive")
-        for i in range(100):
+        for i in range(200):
             if i % 10 == 0:
                 print(i)
                 p.ChangeDutyCycle(i)
