@@ -18,33 +18,19 @@ GPIO.output(in1, GPIO.LOW)
 GPIO.output(in2, GPIO.LOW)
 p = GPIO.PWM(en, 2000)
 p.start(25)
-pressed=False
+pressed = False
 print("\n")
 print("The default speed & direction of motor is LOW & Forward.....")
 print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
 print("\n")
 
-while True:
-    # button is pressed when pin is LOW
-    if not GPIO.input(btn):
-        if not pressed:
-            print("Button pressed!")
-            pressed = True
-        # button not pressed (or released)
-    else:
-        pressed = False
-    time.sleep(0.1)
-    print("Button pressed!")
-
 while (1):
 
     x = raw_input()
 
-
-
     if x == 'r':
         print("run")
-        if (temp1 == 1):
+        if temp1 == 1:
             GPIO.output(in1, GPIO.HIGH)
             GPIO.output(in2, GPIO.LOW)
             print("forward")
@@ -54,7 +40,6 @@ while (1):
             GPIO.output(in2, GPIO.HIGH)
             print("backward")
             x = 'z'
-
 
     elif x == 's':
         print("stop")
@@ -85,7 +70,6 @@ while (1):
         print("medium")
         p.ChangeDutyCycle(50)
         x = 'z'
-
 
     elif x == 'h':
         print("high")
