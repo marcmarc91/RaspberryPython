@@ -59,7 +59,7 @@ while (1):
 
     elif x == 'l':
         print("low")
-        p.ChangeDutyCycle(10)
+        p.ChangeDutyCycle(20)
         x = 'z'
 
     elif x == 'm':
@@ -67,11 +67,19 @@ while (1):
         p.ChangeDutyCycle(50)
         x = 'z'
 
+
     elif x == 'h':
         print("high")
         p.ChangeDutyCycle(100)
         x = 'z'
 
+    elif x == 'p':
+        print("progressive")
+        for i in range(100):
+            if i % 10 == 0:
+                print(i)
+                p.ChangeDutyCycle(i)
+        x = 'p'
 
     elif x == 'e':
         GPIO.cleanup()
