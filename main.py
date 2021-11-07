@@ -34,6 +34,7 @@ while True:
     else:
         pressed = False
     time.sleep(0.1)
+    print("Button pressed!")
 
 while (1):
 
