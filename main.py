@@ -7,13 +7,13 @@ in1 = 24
 in2 = 23
 en = 25
 temp1 = 1
-btn=16;
+btn = 16
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(in1, GPIO.OUT)
 GPIO.setup(in2, GPIO.OUT)
 GPIO.setup(en, GPIO.OUT)
-GPIO.setup(btn,GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(btn, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.output(in1, GPIO.LOW)
 GPIO.output(in2, GPIO.LOW)
 p = GPIO.PWM(en, 2000)
