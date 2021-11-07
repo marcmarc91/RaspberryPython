@@ -24,10 +24,8 @@ print("The default speed & direction of motor is LOW & Forward.....")
 print("r-run s-stop f-forward b-backward l-low m-medium h-high e-exit")
 print("\n")
 
-while (1):
-
-    x = raw_input()
-
+while True:
+    # button is pressed when pin is LOW
     if not GPIO.input(btn):
         if not pressed:
             print("Button pressed!")
@@ -36,6 +34,12 @@ while (1):
     else:
         pressed = False
     time.sleep(0.1)
+
+while (1):
+
+    x = raw_input()
+
+
 
     if x == 'r':
         print("run")
