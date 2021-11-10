@@ -33,10 +33,10 @@ Seq[7] = [0, 1, 1, 0]
 
 
 def setStep(w1, w2, w3, w4):
-    GPIO.output(coil_A_1_pin, w1)
-    GPIO.output(coil_A_2_pin, w2)
-    GPIO.output(coil_B_1_pin, w3)
-    GPIO.output(coil_B_2_pin, w4)
+    GPIO.output(StepPins[0], w1)
+    GPIO.output(StepPins[1], w2)
+    GPIO.output(StepPins[2], w3)
+    GPIO.output(StepPins[3], w4)
 
 
 def forward(delay, steps):
