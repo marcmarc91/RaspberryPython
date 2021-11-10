@@ -1,14 +1,25 @@
-import RPi.GPIO as GPIO
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# libraries
 import time
+import RPi.GPIO as GPIO
 
+# Use BCM GPIO references
+# Instead of physical pin numbers
 GPIO.setmode(GPIO.BCM)
-GPIO.setwarnings(False)
-coil_A_1_pin = 24  # pink
-coil_A_2_pin = 25  # orange
-coil_B_1_pin = 8  # blue
-coil_B_2_pin = 7  # yellow
 
-# adjust if different
+# Define GPIO signals to use Pins 18,22,24,26 GPIO24,GPIO25,GPIO8,GPIO7
+StepPins = [24, 25, 8, 7]
+# Set all pins as output
+for pin in StepPins:
+    print("Setup pins")
+    GPIO.setup(pin, GPIO.OUT)
+    GPIO.output(pin, False)
+# Define some settings
+WaitTime = 0.005
+
+# Define simple sequence
 StepCount = 8
 Seq = range(0, StepCount)
 Seq[0] = [0, 1, 0, 0]
@@ -19,14 +30,6 @@ Seq[4] = [1, 0, 0, 0]
 Seq[5] = [1, 0, 1, 0]
 Seq[6] = [0, 0, 1, 0]
 Seq[7] = [0, 1, 1, 0]
-
-GPIO.setup(enable_pin, GPIO.OUT)
-GPIO.setup(coil_A_1_pin, GPIO.OUT)
-GPIO.setup(coil_A_2_pin, GPIO.OUT)
-GPIO.setup(coil_B_1_pin, GPIO.OUT)
-GPIO.setup(coil_B_2_pin, GPIO.OUT)
-
-GPIO.output(enable_pin, 1)
 
 
 def setStep(w1, w2, w3, w4):
