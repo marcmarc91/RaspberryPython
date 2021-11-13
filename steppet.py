@@ -70,8 +70,9 @@ def steps(nb):
 # Start main loop
 if __name__ == '__main__' :
     hasRun=False
+    nbStepsPerRev = raw_input()
+
     while not hasRun:
-            nbStepsPerRev = raw_input()
             print("TEST {}".format(nbStepsPerRev))
             steps(nbStepsPerRev)# parcourt un tour dans le sens horaire
             time.sleep(1)
