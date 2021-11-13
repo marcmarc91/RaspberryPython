@@ -40,8 +40,8 @@ Seq2[5] = [0,0,1,1]
 Seq2[6] = [0,0,0,1]
 Seq2[7] = [1,0,0,1]
 # Choose a sequence to use
-Seq = Seq1
-StepCount = StepCount1
+Seq = Seq2
+StepCount = StepCount2
 
 def steps(nb):
         StepCounter = 0
