@@ -17,7 +17,7 @@ for pin in StepPins:
         GPIO.setup(pin,GPIO.OUT)
         GPIO.output(pin, False)
 # Define some settings
-WaitTime = 0.001
+WaitTime = 0.0001
 
 # Define simple sequence
 StepCount1 = 4
