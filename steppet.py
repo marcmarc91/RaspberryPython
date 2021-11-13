@@ -67,7 +67,7 @@ def steps(nb):
                 time.sleep(WaitTime)
 
 # Start main loop
-nbStepsPerRev=2048
+nbStepsPerRev=raw_input()
 if __name__ == '__main__' :
     hasRun=False
     while not hasRun:
