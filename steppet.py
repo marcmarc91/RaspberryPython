@@ -50,7 +50,7 @@ def steps(nb):
         else: sign=1
         nb=sign*nb*2 #times 2 because half-step
         print("nbsteps {} and sign {}".format(nb,sign))
-        for i in range(nb):
+        while(True):
                 for pin in range(4):
                         xpin = StepPins[pin]
                         if Seq[StepCounter][pin]!=0:
