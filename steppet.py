@@ -3,6 +3,7 @@
 
 # libraries
 import time
+
 import RPi.GPIO as GPIO
 
 # Use BCM GPIO references
@@ -71,7 +72,7 @@ if __name__ == '__main__' :
     hasRun=False
     while not hasRun:
             nbStepsPerRev = raw_input()
-
+            print("TEST {}".format(nbStepsPerRev))
             steps(nbStepsPerRev)# parcourt un tour dans le sens horaire
             time.sleep(1)
             steps(-nbStepsPerRev)# parcourt un tour dans le sens anti-horaire
