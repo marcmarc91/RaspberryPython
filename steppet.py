@@ -70,7 +70,7 @@ def steps(nb):
 # Start main loop
 if __name__ == '__main__' :
     hasRun=False
-    nbStepsPerRev = raw_input()
+    nbStepsPerRev = int(input("Enter a number: "))
 
     while not hasRun:
             print("TEST {}".format(nbStepsPerRev))
