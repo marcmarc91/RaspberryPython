@@ -67,10 +67,11 @@ def steps(nb):
                 time.sleep(WaitTime)
 
 # Start main loop
-nbStepsPerRev=raw_input()
 if __name__ == '__main__' :
     hasRun=False
     while not hasRun:
+            nbStepsPerRev = raw_input()
+
             steps(nbStepsPerRev)# parcourt un tour dans le sens horaire
             time.sleep(1)
             steps(-nbStepsPerRev)# parcourt un tour dans le sens anti-horaire
