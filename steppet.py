@@ -44,13 +44,15 @@ Seq2[7] = [1,0,0,1]
 Seq = Seq2
 StepCount = StepCount2
 
+run=True;
+
 def steps(nb):
         StepCounter = 0
         if nb<0: sign=-1
         else: sign=1
         nb=sign*nb*2 #times 2 because half-step
         print("nbsteps {} and sign {}".format(nb,sign))
-        while(True):
+        while(run):
                 for pin in range(4):
                         xpin = StepPins[pin]
                         if Seq[StepCounter][pin]!=0:
@@ -66,11 +68,14 @@ def steps(nb):
                         StepCounter = StepCount-1
                 # Wait before moving on
                 time.sleep(WaitTime)
+                x = raw_input()
+
+                if x == 'r': run=False
 
 # Start main loop
 if __name__ == '__main__' :
     hasRun=False
-    nbStepsPerRev = int(input("Enter a number: "))*2048
+    nbStepsPerRev = int(input("Enter a number: ")) * 2048
 
     while not hasRun:
             print("TEST {}".format(nbStepsPerRev))
