@@ -47,6 +47,7 @@ StepCount = StepCount2
 run=True;
 
 def steps(nb):
+        global run
         StepCounter = 0
         if nb<0: sign=-1
         else: sign=1
